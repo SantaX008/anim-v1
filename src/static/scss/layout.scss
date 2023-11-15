@@ -1,0 +1,66 @@
+body {
+    background: #1b202b;
+    font-family: "YS Display", Helvetica, Arial;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    display: block;
+}
+
+.btn {
+    display: inline-block;
+    cursor: pointer;
+    color: #1b202b;
+    text-decoration: none;
+    background: #ffdb2c;
+    border-radius: 16px;
+    font-size: 24px;
+    line-height: 100%;
+    font-weight: 500;
+    padding: 20px 35px;
+    text-align: center;
+    transition: 0.35s color ease-in,
+    0.35s background-color ease-in;
+
+    &:hover {
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: none;
+    padding: 0 10px;
+    margin: 0 auto;
+
+    @media screen and (min-width: 769px) {
+        padding: 0 10px;
+        max-width: 1024px;
+    }
+
+    @media screen and (min-width: 1025px) {
+        padding: 0 20px;
+        max-width: 1142px;
+    }
+
+    @media screen and (min-width: 1367px) {
+        padding: 0 20px;
+        max-width: 1074px;
+    }
+
+    @media screen and (min-width: 1601px) {
+        padding: 0 20px;
+        max-width: 1286px;
+    }
+}

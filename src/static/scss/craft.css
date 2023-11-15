@@ -1,0 +1,204 @@
+.craft {
+  padding: 46px 60px 85px;
+  background: #c3cee0;
+  border-radius: 20px;
+}
+.craft__title {
+  max-width: 905px;
+  color: #1b202b;
+  margin-bottom: 10px;
+  font-size: 50px;
+  line-height: 110%;
+}
+.craft__description {
+  color: #000;
+  font-size: 30px;
+}
+
+.craft-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 121px;
+}
+
+.craft-container-backpack {
+  position: relative;
+  width: 45%;
+}
+.craft-container-backpack:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 107.3267326733%;
+}
+.craft-container-backpack > img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.craft-container-info {
+  flex-basis: 50%;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.35s ease-in;
+  transition-delay: 1.5s;
+}
+.craft-container-info.show {
+  opacity: 1;
+  visibility: visible;
+}
+.craft-container-info__text {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 40px;
+  max-width: 270px;
+}
+.craft-container-info .btn {
+  padding: 24px 39px;
+  border-radius: 100px;
+}
+
+.craft-container-thing {
+  position: absolute;
+  animation: scaleUpDown 2s ease-in-out infinite alternate;
+}
+.craft-container-thing::after {
+  content: attr(data-text);
+  padding: 14px 20px;
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 500;
+  color: #f2f3ee;
+  background: #109de0;
+  border-radius: 14px;
+  border-bottom-left-radius: 0;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.35s ease-in;
+  transition-delay: 1.5s;
+}
+.craft-container-thing.ready {
+  pointer-events: none;
+}
+.craft-container-thing.ready::after {
+  opacity: 1;
+}
+.craft-container-thing img {
+  width: 100%;
+}
+.craft-container-thing--merch {
+  width: 316px;
+  top: 72px;
+  left: -14px;
+  animation: none;
+  z-index: 2;
+}
+.craft-container-thing--merch::after {
+  right: -141px;
+  top: 75px;
+  opacity: 1;
+}
+.craft-container-thing--money {
+  width: 320px;
+  right: 257px;
+  top: 32px;
+  z-index: 1;
+}
+.craft-container-thing--money::after {
+  right: -76px;
+  top: 89px;
+}
+.craft-container-thing--money.ready {
+  animation: money 1.5s linear forwards;
+}
+.craft-container-thing--laptop {
+  width: 340px;
+  top: 257px;
+  right: 285px;
+  z-index: 0;
+}
+.craft-container-thing--laptop::after {
+  right: -13px;
+  top: 119px;
+}
+.craft-container-thing--laptop.ready {
+  animation: laptop 1.5s linear forwards;
+}
+.craft-container-thing--corporative {
+  width: 262px;
+  top: 96px;
+  right: -30px;
+  z-index: 2;
+}
+.craft-container-thing--corporative::after {
+  right: -76px;
+  top: 89px;
+  transform: rotate(38deg) translate(107px, 38px);
+}
+.craft-container-thing--corporative.ready {
+  animation: corporative 1.5s linear forwards;
+}
+.craft-container-thing--badge {
+  width: 352px;
+  right: 21px;
+  bottom: -16px;
+}
+.craft-container-thing--badge::after {
+  right: 6px;
+  top: 149px;
+}
+.craft-container-thing--badge.ready {
+  animation: badge 1.5s linear forwards;
+}
+
+@keyframes scaleUpDown {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+}
+@keyframes money {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-15%, -15%);
+  }
+  100% {
+    transform: translate(-97%, 67%);
+  }
+}
+@keyframes laptop {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-124%, 0);
+  }
+}
+@keyframes corporative {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-357%, 79%) rotate(-38deg);
+  }
+}
+@keyframes badge {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-161%, 2%);
+  }
+}
+
+/*# sourceMappingURL=craft.css.map */
