@@ -1,6 +1,6 @@
 body {
   background: #1b202b;
-  font-family: "YS Text", Helvetica, Arial;
+  font-family: "YS Display", Helvetica, Arial;
 }
 
 *,
@@ -25,11 +25,11 @@ img {
   color: #1b202b;
   text-decoration: none;
   background: #ffdb2c;
-  border-radius: 16px;
+  border-radius: 100px;
   font-size: 24px;
   line-height: 100%;
   font-weight: 500;
-  padding: 20px 35px;
+  padding: 24px 39px;
   text-align: center;
   transition: 0.35s color ease-in, 0.35s background-color ease-in;
 }
@@ -41,26 +41,27 @@ img {
 }
 @media screen and (min-width: 769px) {
   .container {
-    padding: 0 10px;
+    max-width: 768px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .container {
     max-width: 1024px;
   }
 }
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1366px) {
   .container {
-    padding: 0 20px;
-    max-width: 1142px;
+    max-width: 1122px;
   }
 }
-@media screen and (min-width: 1367px) {
+@media screen and (min-width: 1600px) {
   .container {
-    padding: 0 20px;
-    max-width: 1074px;
+    max-width: 1054px;
   }
 }
-@media screen and (min-width: 1601px) {
+@media screen and (min-width: 1920px) {
   .container {
-    padding: 0 20px;
-    max-width: 1286px;
+    max-width: 1266px;
   }
 }
 
