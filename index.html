@@ -472,6 +472,12 @@
     }
   });
 
+  swiperH.pagination.bullets.each((idx, el) => {
+    idx.addEventListener('mouseenter', function() {
+      swiperH.slideTo(el+1)
+    })
+  })
+
 </script>
 </body>
 </html>
