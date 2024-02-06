@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Title</title>
+  <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/swiper@7/swiper-bundle.min.css"
+  />
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      background-color: rgba(248, 248, 248, 1);
+      font-family: Manrope, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+      padding-bottom: 72px;
+      max-height: 580px;
+      position: relative;
+    }
+
+    .swiper-slide {
+      position: relative;
+    }
+
+    .swiper-slide-content {
+      position: relative;
+      z-index: 1;
+      padding: 16px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .swiper-slide video {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 16px;
+      z-index: 0;
+      object-fit: cover;
+    }
+
+    .swiper-container-horizontal {
+      width: calc(100% - 72px);
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .wrapper {
+      position: relative;
+    }
+
+    .wrapper::before {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      top: 0;
+      height: 500px;
+      background: linear-gradient(to right, rgba(248, 248, 248, 1), rgba(248, 248, 248, 0));
+    }
+
+    .wrapper::after {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      right: 0;
+      top: 0;
+      height: 500px;
+      background: linear-gradient(to left, rgba(248, 248, 248, 1), rgba(248, 248, 248, 0));
+    }
+
+    .wrapper {
+      overflow-x: hidden;
+      height: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .swiper-slide-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .tag-list {
+      list-style: none;
+      padding: 0;
+      margin: -5px;
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: column;
+    }
+
+    .tag-list__item {
+      padding: 8px 16px;
+      font-size: 18px;
+      line-height: 24px;
+      color: #fff;
+      font-weight: 500;
+      background: #000;
+      border-radius: 10px;
+      margin: 5px;
+      align-self: flex-end;
+    }
+
+    .swiper-container-horizontal .swiper-pagination {
+      bottom: 0;
+      margin-top: 32px;
+      font-size: 0;
+    }
+
+    .swiper-container-horizontal .swiper-pagination-bullet {
+      width: 6px;
+      height: 40px;
+      transform: scale(0.5);
+      border-radius: 40px;
+      transition: 0.35s ease-in;
+      transform-origin: bottom;
+      background-color: #DDDDDD;
+      opacity: 1;
+    }
+
+    .swiper-container-horizontal .swiper-pagination-bullet-active {
+      background-color: #3454EC;
+    }
+
+    .swiper-container-horizontal .swiper-slide:hover .cite {
+      opacity: 1;
+    }
+
+    .cite-frame {
+      display: flex;
+      align-items: flex-end;
+      margin: 0 -5px;
+    }
+
+    .cite-frame img {
+      margin: 0 5px;
+    }
+
+    .cite {
+      display: none;
+      padding: 20px;
+      background: #fff;
+      border-radius: 18px;
+      font-size: 16px;
+      line-height: 140%;
+      margin: 0 5px;
+      max-width: 338px;
+      opacity: 0;
+      transition: opacity 0.35s ease-in-out;
+    }
+
+    .cite-title {
+      margin-bottom: 4px;
+      color: #000;
+      font-weight: 500;
+    }
+
+    .mobile {
+      display: block;
+    }
+
+    .desktop {
+      display: none;
+    }
+
+    @media screen and (min-width: 767px) {
+      .swiper-container-horizontal {
+        width: calc(100% - 240px);
+      }
+
+      .mobile {
+        display: none;
+      }
+
+      .desktop {
+        display: block;
+      }
+
+      .cite {
+        display: block;
+      }
+
+      .tag-list {
+        flex-direction: row;
+      }
+
+      .swiper-container-horizontal .swiper-pagination-bullet:hover {
+        background-color: #3454EC;
+      }
+
+      .swiper-container-horizontal .swiper-pagination:hover .swiper-pagination-bullet {
+        transform: scale(1);
+      }
+
+      .swiper-container-horizontal .swiper-pagination {
+        margin-top: 40px;
+      }
+
+      .tag-list__item {
+        border-radius: 16px;
+      }
+
+      .wrapper::before,
+      .wrapper::after {
+        width: 80px;
+      }
+
+      .swiper-container {
+        padding-bottom: 80px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="swiper-container swiper-container-horizontal">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <video class="desktop" autoplay="" muted="" loop="" width="100%">
+          <source src="https://storage.yandexcloud.net/cdn.tsekh.design/tsekh-v2-cdn/case-vids/artlife/Artlife2022Laptop%20Crop.webm" type="video/webm">
+          <source src="" type="video/mp4">
+        </video>
+        <video class="mobile" autoplay="" muted="" loop="" width="100%">
+          <source src="https://storage.yandexcloud.net/cdn.tsekh.design/tsekh-v2-cdn/case-vids/artlife/Artlife2022Laptop%20Crop%20Mob.webm" type="video/webm">
+
+          <source src="https://storage.yandexcloud.net/cdn.tsekh.design/tsekh-v2-cdn/case-vids/artlife/Artlife2022Laptop%20Crop%20Mob.mp4" type="video/mp4">
+        </video>
+        <div class="swiper-slide-content">
+          <div class="swiper-slide-header">
+            <img width="80" height="80" src="img/icon1.png" alt="">
+          </div>
+          <div class="swiper-slide-footer">
+            <div class="cite-frame">
+              <img width="80" height="80" src="img/team1.png" alt="">
+              <div class="cite">
+                <div class="cite-title">
+                  Олег, тимлид
+                </div>
+                <div class="cite-text">
+                  «No-code сильно сокращает время разработки. В 2020 мы сделали проект за 1,5 месяца. В 2022 — за 3 недели»
+                </div>
+              </div>
+            </div>
+            <ul class="tag-list">
+              <li class="tag-list__item">
+                ux/ui
+              </li>
+              <li class="tag-list__item">
+                Брендинг
+              </li>
+              <li class="tag-list__item">
+                Реклама
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <video class="desktop" autoplay="" muted="" loop="" width="100%">
+          <source src="https://storage.yandexcloud.net/cdn.tsekh.design/tsekh-v2-cdn/case-vids/tinkoff-cards/TinkoffCards%20Crop.webm" type="video/webm">
+          <source src="" type="video/mp4">
+        </video>
+        <video class="mobile" autoplay="" muted="" loop="" width="100%">
+          <source src="https://storage.yandexcloud.net/cdn.tsekh.design/tsekh-v2-cdn/case-vids/tinkoff-cards/TinkoffCards%20Crop%20Mob.webm" type="video/webm">
+          <source src="https://storage.yandexcloud.net/cdn.tsekh.design/tsekh-v2-cdn/case-vids/tinkoff-cards/TinkoffCards%20Crop%20Mob.mp4" type="video/mp4">
+        </video>
+        <div class="swiper-slide-content">
+          <div class="swiper-slide-header">
+            <img width="80" height="80" src="img/icon2.png" alt="">
+          </div>
+          <div class="swiper-slide-footer">
+            <div class="cite-frame">
+              <img width="80" height="80" src="img/team2.png" alt="">
+              <div class="cite">
+                <div class="cite-title">
+                  Олег, тимлид
+                </div>
+                <div class="cite-text">
+                  «No-code сильно сокращает время разработки. В 2020 мы сделали проект за 1,5 месяца. В 2022 — за 3 недели»
+                </div>
+              </div>
+            </div>
+            <ul class="tag-list">
+              <li class="tag-list__item">
+                ux/ui
+              </li>
+              <li class="tag-list__item">
+                Брендинг
+              </li>
+              <li class="tag-list__item">
+                Реклама
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <video class="desktop" autoplay="" muted="" loop="" width="100%">
+          <source src="https://storage.yandexcloud.net/cdn.tsekh.design/tsekh-v2-cdn/case-vids/Uralsib/UralsibCalendar%20Crop.webm" type="video/webm">
+          <source src="" type="video/mp4">
+        </video>
+
+        <video class="mobile" autoplay="" muted="" loop="" width="100%">
+          <source src="https://storage.yandexcloud.net/cdn.tsekh.design/tsekh-v2-cdn/case-vids/Uralsib/UralsibCalendar%20noText%20Crop%20Mob.webm" type="video/webm">
+          <source src="https://storage.yandexcloud.net/cdn.tsekh.design/tsekh-v2-cdn/case-vids/Uralsib/UralsibCalendar%20noText%20Crop%20Mob.mp4" type="video/mp4">
+        </video>
+        <div class="swiper-slide-content">
+          <div class="swiper-slide-header">
+            <img width="80" height="80" src="img/icon3.png" alt="">
+          </div>
+          <div class="swiper-slide-footer">
+            <div class="cite-frame">
+              <img width="80" height="80" src="img/team3.png" alt="">
+              <div class="cite">
+                <div class="cite-title">
+                  Олег, тимлид
+                </div>
+                <div class="cite-text">
+                  «No-code сильно сокращает время разработки. В 2020 мы сделали проект за 1,5 месяца. В 2022 — за 3 недели»
+                </div>
+              </div>
+            </div>
+            <ul class="tag-list">
+              <li class="tag-list__item">
+                ux/ui
+              </li>
+              <li class="tag-list__item">
+                Брендинг
+              </li>
+              <li class="tag-list__item">
+                Реклама
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <video class="desktop" autoplay="" muted="" loop="" width="100%">
+          <source src="https://storage.yandexcloud.net/cdn.tsekh.design/tsekh-v2-cdn/case-vids/Uralsib/UralsibCalendar%20Crop.webm" type="video/webm">
+          <source src="" type="video/mp4">
+        </video>
+
+        <video class="mobile" autoplay="" muted="" loop="" width="100%">
+          <source src="https://storage.yandexcloud.net/cdn.tsekh.design/tsekh-v2-cdn/case-vids/Uralsib/UralsibCalendar%20noText%20Crop%20Mob.webm" type="video/webm">
+          <source src="https://storage.yandexcloud.net/cdn.tsekh.design/tsekh-v2-cdn/case-vids/Uralsib/UralsibCalendar%20noText%20Crop%20Mob.mp4" type="video/mp4">
+        </video>
+        <div class="swiper-slide-content">
+          <div class="swiper-slide-header">
+            <img width="80" height="80" src="img/icon4.png" alt="">
+          </div>
+          <div class="swiper-slide-footer">
+            <div class="cite-frame">
+              <img width="80" height="80" src="img/team4.png" alt="">
+              <div class="cite">
+                <div class="cite-title">
+                  Олег, тимлид
+                </div>
+                <div class="cite-text">
+                  «No-code сильно сокращает время разработки. В 2020 мы сделали проект за 1,5 месяца. В 2022 — за 3 недели»
+                </div>
+              </div>
+            </div>
+            <ul class="tag-list">
+              <li class="tag-list__item">
+                ux/ui
+              </li>
+              <li class="tag-list__item">
+                Брендинг
+              </li>
+              <li class="tag-list__item">
+                Реклама
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <video class="desktop" autoplay="" muted="" loop="" width="100%">
+          <source src="https://storage.yandexcloud.net/cdn.tsekh.design/tsekh-v2-cdn/case-vids/mtsDD/MtsDD%20Crop.webm" type="video/webm">
+          <source src="" type="video/mp4">
+        </video>
+
+        <video class="mobile" autoplay="" muted="" loop="" width="100%">
+          <source src="https://storage.yandexcloud.net/cdn.tsekh.design/tsekh-v2-cdn/case-vids/mtsDD/MtsDD%20Crop%20Mob.webm" type="video/webm">
+          <source src="https://storage.yandexcloud.net/cdn.tsekh.design/tsekh-v2-cdn/case-vids/mtsDD/MtsDD%20Crop%20Mob.mp4" type="video/mp4">
+        </video>
+        <div class="swiper-slide-content">
+          <div class="swiper-slide-header">
+            <img width="80" height="80" src="img/icon5.png" alt="">
+          </div>
+          <div class="swiper-slide-footer">
+            <div class="cite-frame">
+              <img width="80" height="80" src="img/team5.png" alt="">
+              <div class="cite">
+                <div class="cite-title">
+                  Олег, тимлид
+                </div>
+                <div class="cite-text">
+                  «No-code сильно сокращает время разработки. В 2020 мы сделали проект за 1,5 месяца. В 2022 — за 3 недели»
+                </div>
+              </div>
+            </div>
+            <ul class="tag-list">
+              <li class="tag-list__item">
+                ux/ui
+              </li>
+              <li class="tag-list__item">
+                Брендинг
+              </li>
+              <li class="tag-list__item">
+                Реклама
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination swiper-pagination-horizontal"></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@7/swiper-bundle.min.js"></script>
+<script>
+  var swiperH = new Swiper('.swiper-container-horizontal', {
+    direction: 'horizontal',
+    parallax: true,
+    loop: true,
+    speed: 1000,
+
+    pagination: {
+      el: '.swiper-pagination-horizontal',
+      clickable: true,
+    },
+    slidesPerView: 1,
+    spaceBetween: 16,
+    breakpointsInverse: true,
+    breakpoints: {
+      // when window width is >= 320px
+      767: {
+        slidesPerView: 1,
+        spaceBetween: 60
+      },
+    },
+
+    keyboard: {
+      enabled: true,
+      onlyInViewport: false,
+    }
+  });
+
+</script>
+</body>
+</html>
